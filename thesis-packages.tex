@@ -1,0 +1,65 @@
+% -*- mode:LaTex; mode:visual-line; mode:flyspell; fill-column:75-*-
+% All packages used in this thesis.
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{epigraph}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsfonts}
+\usepackage{appendix}
+\usepackage[numbers,sort]{natbib}
+\usepackage{setspace}
+\usepackage{layout}
+\usepackage[subfigure]{tocloft}  % Set TOC options.
+
+% For plots
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\pgfplotsset{compat=1.9}
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usepgfplotslibrary{colorbrewer}  % provided by local file.
+\usepgfplotslibrary{statistics}
+
+% Enable externalized diagrams (for final copy).
+%\usetikzlibrary{external}
+%\tikzexternalize[prefix=externalize-tikz/]
+
+\usepackage[format=hang]{subfig}  % Do not include caption package in here.
+\usepackage{xcolor}  % Get extra colors.
+\usepackage{algorithm}
+\usepackage{algpseudocode} % algorithmicx
+\usepackage{ctable}
+\usepackage{multirow}
+
+%\usepackage{todonotes}  % This package is slow to include.
+\usepackage{xspace} % macros with trailing spaces
+\usepackage{siunitx}
+\usepackage[raggedright]{titlesec}  % Prevent line breaks in section titles.
+
+% ``float'' algorithms
+\usepackage{float}
+\newfloat{algorithm}{tbp}{lop}
+
+% Colors for links (except TOC -- all black).
+\colorlet{documentLinkColor}{blue}
+\colorlet{documentCitationColor}{black!80}
+\usepackage[backref,
+        pageanchor=true,
+        plainpages=false,
+        pdfpagelabels,
+        bookmarks,
+        bookmarksnumbered,
+]{hyperref}
+\hypersetup{
+     colorlinks = true,
+     citecolor = documentCitationColor,
+     linkcolor = documentLinkColor,
+     urlcolor = documentLinkColor,
+}
+
+% Enable capitalized references. Use this last.
+\usepackage[nameinlink]{cleveref}
+

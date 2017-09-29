@@ -1,0 +1,138 @@
+% -*- mode:LaTeX -*-
+
+%% Skeleton for a thesis.
+%%
+%% You should not need to mess around with this file unless you want to tinker.
+
+
+\documentclass[12pt]{ri_thesis}
+
+% All packages go in here
+\input{thesis-packages}
+\input{thesis-headers}
+
+% Page layout: approx 1" margins.
+\usepackage[
+  reset,
+  letterpaper,
+  twoside,
+  vscale=.75, % Use 75% of the total vertical space (default=0.7)
+  hscale=.70,  % Use 70% of the horizontal space (default=0.7)
+  nomarginpar,  % No space for margin notes.
+  % Margin ratio: Use default (2:3) for binding and 1:1 for on-screen.
+  % hmarginratio=1:1,  % disable this for binding (more space on binding side)
+  % showframe,  % enable to see the margins
+  heightrounded,  % Round size of document.
+]{geometry}
+
+% Un-comment this to show a black bar by overfull hboxes.
+%% \overfullrule=5pt
+
+% Macros and color definitions.
+\input{thesis-macros}
+\input{thesis-colors}
+
+\begin {document}
+
+\frontmatter
+
+\pagestyle{empty}
+
+\input{thesis-title}
+
+\support{}
+\disclaimer{}
+
+% copyright notice generated automatically from Year and author.
+% permission added if \permission{} given.
+\permission{All rights reserved.}
+
+\maketitle
+
+\begin{dedication}
+\input{thesis-dedication}
+\end{dedication}
+
+\pagestyle{plain} % for toc, was empty
+
+% The content of the thesis is broken up into many individual files.
+\begin{abstract}
+\input{thesis-abstract.tex}
+\end{abstract}
+
+\begin{acknowledgments}
+\input{thesis-acknowledgments}
+\end{acknowledgments}
+
+\begin{funding}
+\input{thesis-funding}
+\end{funding}
+
+% Table of contents: Make links black, add a hyperlink target, and disable
+% microtype (as per the docs).
+\cleardoublepage
+
+% Set the space before & after header line for the Contents, List of tables,
+% List of figures. This is primarily to make the Contents will fit on two pages.
+\setlength{\cftbeforetoctitleskip}{3.0em}
+\setlength{\cftaftertoctitleskip}{2.0em}
+\setlength{\cftbeforeloftitleskip}{3.0em}  % LOF: List of figures
+%\setlength{\cftafterloftitleskip}{2.0em}  % For some reason leave this out.
+\setlength{\cftbeforelottitleskip}{3.0em}  % LOT: List of tables
+%\setlength{\cftafterlottitleskip}{2.0em}  % Same
+\cftsetpnumwidth{1.75em}  % Prevent overfull hbox on TOC numbers.
+
+\hypersetup{linkcolor=black}  % Make TOC links black.
+\hypertarget{contents}{}
+\microtypesetup{protrusion=false}
+\tableofcontents
+\chapternote{\hspace{-12pt}When this dissertation is viewed as a PDF, the page header is a link to this Table of Contents.}
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\microtypesetup{protrusion=true}
+
+
+% Main matter. Use
+\mainmatter
+\pagestyle{thesis}
+
+\hypersetup{linkcolor=documentLinkColor}  % Make links colorful again
+
+% ********************************************************************************
+%                                  Main Content
+% ********************************************************************************
+
+% Main content: 1.5 line spacing.
+\onehalfspace
+\input{thesis-main}
+
+\appendix
+\input{thesis-appendix}
+
+% ********************************************************************************
+%                                 Back Matter
+% ********************************************************************************
+
+\backmatter
+
+% Normal line spacing
+\singlespace
+
+% By default \bibsection is \chapter*, but we really want this to show
+% up in the table of contents and pdf bookmarks.
+\renewcommand{\bibsection}{\chapter{\bibname}}
+% Additionally, redefine the chapter header to remove the chapter number.
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\color{headergray}{#1}}{}
+}
+
+
+%\newcommand{\bibpreamble}{This text goes between the ``Bibliography''
+%  header and the actual list of references}
+\bibliographystyle{plainnat}
+
+% No whitespace allowed in the reference files list, ever.
+\bibliography{bibliography/references}
+\end{document}

@@ -1,0 +1,25 @@
+% -*- mode:LaTex; mode:visual-line; mode:flyspell; fill-column:75-*-
+
+% Define any helpful macros here.
+
+% Parentheses, braces, brackets.
+\newcommand*{\parens}[1]{\left( #1 \right)}
+\newcommand*{\paren}[1]{\left( #1 \right)}
+\newcommand*{\braces}[1]{ \{ #1 \} }
+\newcommand*{\brackets}[1]{ \left[ #1 \right] }
+
+% Math stuff.
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+
+% Default table and figure dimensions.
+\newcommand{\defaultTableWidth}{0.9 \textwidth}
+\newcommand{\defaultFigWidth}{0.65}
+\newcommand{\defaultAxisWidth}{0.7\textwidth}
+\newcommand{\defaultAxisHeight}{0.5\textwidth}
+
+% Footnote for an entire chapter -- no symbol, just text at the bottom.
+\newcommand{\chapternote}[1]{{%
+  \let\thempfn\relax% Remove footnote number printing mechanism
+  \footnotetext[0]{\emph{#1}}% Print footnote text
+}}

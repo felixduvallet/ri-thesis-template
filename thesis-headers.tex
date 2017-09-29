@@ -1,0 +1,55 @@
+\usepackage{fancyhdr}
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\setlength{\headheight}{25pt}
+
+% Outside top: nothing
+\fancyhead[LE,RO]{}
+%%\fancyhead[LE,RO]{DRAFT \today}  % This puts a DRAFT note.
+
+% Inside top: Chapter name, with link to table of contents.
+\fancyhead[LO,RE]{\hyperlink{contents}{\slshape \leftmark}}
+
+% Make header gray.
+\definecolor{headergray}{rgb}{0.5,0.5,0.5}
+
+% Make chapter header line: N. <name>
+\renewcommand{\chaptermark}[1]{%
+  \markboth{%
+    \color{headergray}{%
+      \thechapter.\ #1%
+    }%
+  }{}%
+}
+
+% NOTE: prevent the Bibliography from using a fake chapter number by redefining
+% the chaptermark as such, right before the bibliography:
+% \renewcommand{\chaptermark}[1]{%
+%   \markboth{\color{headergray}{#1}}{}
+% }
+
+% Footer: gray page number.
+\fancyfoot[C]{}
+
+% Header and footer rule lines are colored the same, if used.
+%% \renewcommand{\headrule}{
+%%   \hbox to\headwidth {\color{headergray}\leaders\hrule height \headrulewidth\hfill}
+%% }
+%% \renewcommand{\footrule}{
+%%   \hbox to\headwidth{\color{headergray}\leaders\hrule height \footrulewidth\hfill}
+%% }
+
+% Call: \pagestyle{fancy}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  %\fancyfoot[C]{}
+  \fancyfoot[RO,LE]{\thepage}
+}
+
+\fancypagestyle{thesis}{%
+  \fancyhead{}%
+  \fancyhead[RO,LE]{\hyperlink{contents}{\slshape \leftmark}}
+  \fancyfoot[RO,LE]{\thepage}%
+}
