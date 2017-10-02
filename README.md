@@ -3,7 +3,6 @@ RI-thesis template
 LaTeX template for a CMU Robotics Institute Thesis
 
 TODO
- - add a single citation/reference to remove the bib error
  - Add default algorithm to document
  - (maybe) add example of tikz graph.
 
