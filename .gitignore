@@ -122,6 +122,9 @@ acs-*.bib
 # listings
 *.lol
 
+# OSX system files
+*.DS_Store
+
 # makeidx
 *.idx
 *.ilg
