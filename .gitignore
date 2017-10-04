@@ -31,12 +31,14 @@
 *.run.xml
 
 ## Build tool auxiliary files:
+*.d
 *.fdb_latexmk
+*.make
+*.pdfsync
 *.synctex
 *.synctex(busy)
 *.synctex.gz
 *.synctex.gz(busy)
-*.pdfsync
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
@@ -119,6 +121,9 @@ acs-*.bib
 
 # listings
 *.lol
+
+# OSX system files
+*.DS_Store
 
 # makeidx
 *.idx
